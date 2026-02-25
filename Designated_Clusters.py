@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import contextily as ctx # this is the file that handles integrating a map with plt
 
-df = pd.read_csv("Sensor_Location.csv")
+df = pd.read_csv('Sensor_Location.csv') # Naturally change this to be your own path
 
 centres = {
     "Central": (-2.592, 51.453), #2
