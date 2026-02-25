@@ -39,28 +39,31 @@ for _, row in df.iterrows():
 
 df["Cluster"] = cluster_labels
 
-print(df.groupby("Cluster").size())
-
-plt.figure()
+# --- This is a small change to the original that turns the output to a grid plotted on a real map with contextily
 
 for name, group in df.groupby("Cluster"):
-    plt.scatter(group["Longitude"], group["Latitude"], label=name)
+    # I've put a white boarder around each marker
+    plt.scatter(group["Longitude"], group["Latitude"], label=name, s=30, edgecolors='white', zorder=3)
 
 theta = np.linspace(0, 2*np.pi, 200)
 
 for name, (clon, clat) in centres.items():
-    
     circle_lon = clon + (radius / lon_to_m) * np.cos(theta)
     circle_lat = clat + (radius / lat_to_m) * np.sin(theta)
     
-    plt.plot(circle_lon, circle_lat)
-    plt.scatter(clon, clat, marker="x") 
+    # I've inclued a small black marker in each sector
+    plt.plot(circle_lon, circle_lat, color = 'red', linestyle = '--', linewidth = 2, zorder = 4)
+    plt.scatter(clon, clat, marker = "x", color = 'black', s = 100, zorder = 5) 
+
+# This fetches map tiles from openstreetmap
+# crs="EPSG:4326" is just the code for the lat/long convention
+# alpha is teh "translucentness" of the map
+ctx.add_basemap(plt.gca(), crs = "EPSG:4326", source = ctx.providers.OpenStreetMap.Mapnik, alpha =0.8)
 
 plt.xlabel("Longitude")
 plt.ylabel("Latitude")
-plt.title("Sensor Clusters")
+plt.title("Sensor Clusters: Bristol, UK")
 plt.legend()
-plt.grid(True)
+plt.grid(True, alpha=0.3) # Dimmed grid lines so they don't ruin the map
 plt.gca().set_aspect("equal", adjustable="box")
-
 plt.show()
