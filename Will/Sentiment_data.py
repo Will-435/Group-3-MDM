@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 
-CLEAN_PATH = "TB-2/clean_data.csv"
+CLEAN_PATH = "TB-2/clean_data.csv" # change this root to your loacal path. It will cause an error otherwise
 TARGET_TITLE = "% who feel safe in their local area after dark"
-PATH = 'TB-2/Sentiment.csv'
+PATH = 'TB-2/Sentiment.csv' # Obviously change this, or it will make a sub-directory called TB-2
 
 
 def open_file(file_path):
