@@ -18,5 +18,3 @@ The Generalized Linear Model (GLM) will incorporate the following variables:
 | **Tom & Will** | Continue with current assigned tasks. |
 | **Jayden** | Write up the safety methodology (Bayesian Shrinkage). |
 | **Karan** | Write up the introduction and methodology for the GLM. |
-
-> **Note:** "Bayesian Shrinking" was corrected to the standard statistical term "Bayesian Shrinkage" for the final write-up.
