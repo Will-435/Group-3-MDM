@@ -6,11 +6,11 @@
 ### Case Control Investigation
 * **Objective:** Ensure the Odds Ratio ($OR$) is representative of the entirety of Bristol.
 * **GLM Strategy:** Investigate individual "clusters" to obtain localized results.
-* **Comparison Method:** * Validate that the average of the clusters aligns with the overall data.
+* **Comparison Method:** Validate that the average of the clusters aligns with the overall data.
     * Apply case control methodology to these specific clusters.
-    * Mirror the visualisations used in the example study.
-* **Ownership:** * **Tom:** Data engineering and dataset integration.
-    * **Will:** Mathematical application to derive case control values.
+    * Replicate the visualisations used in the example study.
+* **Ownership:** * **Tom:** Data engineering and dataset integration from the briefing data.
+    * **Will:** Mathematical derrivation of the case control values, both for each cluster and for bristol as a whole.
     * **Action:** Update the methodology section regarding the case control method.
 * **Deadline:** Thursday (Will & Tom)
 
