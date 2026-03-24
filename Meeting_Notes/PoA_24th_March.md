@@ -25,22 +25,20 @@ Error consolidation approach, GLM integration, clustering methodology, and prese
 
 ### Karan Dama
 - Rerun odds ratio analysis per cluster using the 7-day sensor removal threshold
-- Coordinate with Shavash to obtain his GLM data and apply his model to the consistent dataset
+- Coordinate with Shavash to obtain his GLM data and apply his model to the dataset we have decided to use
 - Prepare content for **Slide 3 — Data Cleaning**
-- Share updated presentation plan with the team
-- Send Gemini meeting notes to Will for cross-reference
 
 ### Will
-- Create a plan of action document, condense AI meeting notes, and upload both to GitHub
+- Create a plan of action document for the next week (this one)
 - Prepare content for **Slide 4 — Case Control Method**
-- Assist Jayden with Slides 1 & 2
+- Prepare content for **Slide 1 & 2 — Intro and Motivation** with Jayden
 
 ### Thomas Tucker
 - Prepare content for **Slide 5 — Results**, including the qualitative transition to the GLM
 
 ### Jayden Chew
-- Prepare content for **Slides 1 & 2 — Introduction & Motivation/Application** (with support from Will)
+- Prepare content for **Slides 1 & 2 — Introduction & Motivation** with Will
 
 ### All
 - Complete assigned slide bullet points/draft scripts by the **weekend**
-- Regroup **Monday 30th at 1:00 PM** to review progress on the first 5–6 slides
+- Meet on **Monday 30th at 1:00 PM** to review progress on the first 5 - 6 slides
