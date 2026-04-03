@@ -41,25 +41,22 @@
 ### Actions
 
 **Tom:**
-* Complete data engineering.
-* Handle dataset integration from the briefing data.
-* Update the methodology section regarding the case control method (Deadline: Thursday, shared with Will).
+* Handle the data cleaning for the case control model
+* Update the methodology section of the report regarding the case control method (Deadline: Thursday, shared with Will).
 
 **Will:**
-* Perform mathematical derivation of the case control values for each cluster and for Bristol as a whole.
+* Complete the code to derive case control values to compare with Oscar report.
 * Update the methodology section regarding the case control method (Deadline: Thursday, shared with Tom).
 
 **Karan:**
-* Define coverage for the presentation vs. the separate report.
-* Draft the presentation outline (bullet points with timestamps).
-* Prepare the detailed methodology overview for the presentation.
-* Propose graph visualisations for the presentation.
+* Draft presentation outline (bullet points with timestamps).
+* Write up detailed methodology overview for presentation.
 * Finalize the presentation plan for review with Nikolai (Deadline: Thursday).
 
 **Shavarsh:**
 * Refine the Generalised Linear Model.
-* Ensure all parameters within the GLM are functioning correctly.
+* Fix the GLM parameters that aren't working.
 
 **Jayden:**
-* Review the example study provided in the briefing email.
-* Draft the write-up on Overleaf to update the Methodology section incorporating the Case Control method.
+* Review the example study in the briefing email.
+* Draft the write-up on Overleaf to update the Methodology section with the Case Control method.
