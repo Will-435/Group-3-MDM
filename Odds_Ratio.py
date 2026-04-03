@@ -72,12 +72,10 @@ def calculate_mh_pooled_or(cluster_results):
 
 
 # Load traffic data
-# ** Update this with your local filepath if pulling from git **
 df_traffic = pd.read_csv('TB-2/all_sensors.csv')
 df_traffic['date'] = pd.to_datetime(df_traffic['date'])
 
 # Load cluster designations
-# **Update this with your local filepath if pulling from git**
 df_clusters = pd.read_csv('TB-2/Sensor_Location_with_clusters.csv') 
 # Merging the datasets. Sensor_id and SensorNumber are
 # the same so they must be mapped to one another.
