@@ -15,10 +15,12 @@
 * **Drafting Workflow:** To prevent repetition, Will to write the policy recommendations first, and then work with Karan to selectively frame the GLM results section.
 
 ## Actions
+
 **Karan Dama:** 
 *  Analyse odds ratios including 7, 8, and 9 AM to verify the commuter vs. leisure theory.
 *  Plot pedestrian safety correlations.
 *  Write the final GLM results using Will's policy framework.
+
  **Will Barry:**
 *  Feature Engineer the GLM data in Will-Work branch to align/compare with government policies.
 *  Draft the initial government policy recommendations based on the current data for the powerpoint.
