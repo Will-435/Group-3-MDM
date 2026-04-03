@@ -16,4 +16,4 @@
 - [ ] **Streetlights:** Karan
 - [ ] **Businesses:** Tom 
 - [ ] **Population Density:** Jayden
-- [ ] **Crime:** Will
+- [ ] **Crime and safety sentiment:** Will
