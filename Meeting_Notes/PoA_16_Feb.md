@@ -1,4 +1,4 @@
-# Meeting Plan - 16/02/2026
+# Tasks for the week of the 16th of February 
 
 ## Shavarsh
 * **Task:** 5.1 checklist.
