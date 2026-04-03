@@ -17,11 +17,14 @@
 **Karan Dama:** 
 *  Finish data cleaning slides (add a line/bar chart to visualise the impact of the outlier sensors).
 *  Run the GLM code with the cleaned data, extract the results, and find the key areas that change for Will.
+  
 **Thomas Tucker:**
 *  Finish the case-control results slide with a definition of an odds ratio.
 *  Create a comparison slide evaluating the case-control model against the GLM - note the weknesses of teh Case-Control model.
+  
 **Will Barry:**
 *  Improve my method slides, try and convert the information into just 2 slides.
 *  Draft the implications slide by interpreting Karan's results into actionable mitigation steps. Find and reference UK Gov and Bristol Council environmental targets.
+
 **Jayden Chew:** 
 *  Complete the introduction explaining darkness impacts. Write the technical limitations section for the GLM.
