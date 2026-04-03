@@ -36,8 +36,9 @@
 * **Task:** Update the Methodology section to incorporate the Case Control method.
 * **Ownership:** **Jayden** to review the example study in the briefing email and draft the write-up on Overleaf.
 
+---
 
-### Actions by Team Member
+### Actions
 
 **Tom:**
 * Handle the data cleaning for the case control model
