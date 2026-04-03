@@ -6,11 +6,11 @@
 * **Output:** Visual colourmap.
 
 ## Karan
-* **Task:** Work with Tom to assign the case control (splitting up the sensors).
+* **Task:** Work with Tom to split up the sensors into clusters
 * **Output:** 3 defined sections split up on a map.
 
 ## Tom
-* **Task:** Work with Karan to assign the case control (splitting up the sensors).
+* **Task:** Work with Tom to split up the sensors into clusters
 * **Output:** 3 defined sections split up on a map.
 
 ## Jayden
@@ -21,6 +21,6 @@
     * Cleaned datasets.
 
 ## Will
-* **Task:** Methodology.
-* **Task:** Motivation.
+* **Task:** Methodology section in the report draft 1.
+* **Task:** Motivation section of the report draft 1.
 * **Output:** 2 Paragraphs.
