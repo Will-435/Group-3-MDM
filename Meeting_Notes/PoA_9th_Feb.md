@@ -35,3 +35,26 @@
 ### Overleaf Updates
 * **Task:** Update the Methodology section to incorporate the Case Control method.
 * **Ownership:** **Jayden** to review the example study in the briefing email and draft the write-up on Overleaf.
+
+### Actions
+
+**Tom:**
+* Handle the data cleaning for the case control model
+* Update the methodology section of the report regarding the case control method (Deadline: Thursday, shared with Will).
+
+**Will:**
+* Complete the code to derive case control values to compare with Oscar report.
+* Update the methodology section regarding the case control method (Deadline: Thursday, shared with Tom).
+
+**Karan:**
+* Draft presentation outline (bullet points with timestamps).
+* Write up detailed methodology overview for presentation.
+* Finalize the presentation plan for review with Nikolai (Deadline: Thursday).
+
+**Shavarsh:**
+* Refine the Generalised Linear Model.
+* Fix the GLM parameters that aren't working.
+
+**Jayden:**
+* Review the example study in the briefing email.
+* Draft the write-up on Overleaf to update the Methodology section with the Case Control method.
