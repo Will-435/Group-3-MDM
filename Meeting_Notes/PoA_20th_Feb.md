@@ -1,9 +1,5 @@
 # MDM3
 
-## Actions Up For Grabs
-
-- [ ] **Background Research:** Read up on and understand the existing GLM (Generalized Linear Model) that we already have.
-
 ### Data Gathering Assignments
 
 **Standard process for all assigned topics:**
@@ -13,6 +9,7 @@
 4. Overlay the data with footfall data
 5. Investigate it further (optional)
 6. Upload files to Git
+7. Present our findings one at a time in the next meeting
 
 **Topic Allocations:**
 - [ ] **CCTV Cameras:** Shavarsh
