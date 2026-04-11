@@ -68,3 +68,9 @@ plt.legend()
 plt.grid(True, alpha=0.3) # Dimmed grid lines so they don't ruin the map
 plt.gca().set_aspect("equal", adjustable="box")
 plt.show()
+
+
+# I have added this section for the cent pedestrian count for slide 27 of the pptx.
+cent_df = df[df["Cluster"] == "Central"]
+total_ped = cent_df["Pedestrian_Count"].sum()
+print(f'The total number of pedestrians in the Cebtral cluster is {total_ped}')
