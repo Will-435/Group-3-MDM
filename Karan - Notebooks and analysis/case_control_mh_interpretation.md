@@ -78,3 +78,59 @@ So the cleanest reporting strategy is:
 
 - use the **overall pooled-hours MH OR** as the headline summary for each mode
 - immediately follow it with the **cluster breakdown** to show that pedestrians are stable but cyclists are heterogeneous
+
+## Additional View: Pooling Across All Control Hours for Each Case Hour
+
+The notebook also now includes a second weighted MH summary that fixes one **case hour** at a time and pools across all 10 control hours.
+
+The formula is the same weighted MH structure as before:
+
+`MHw_OR(case hour i) = sum_j((A_ij * D_ij) / N_ij) / sum_j((B_ij * C_ij) / N_ij)`
+
+where:
+
+- `i` is the fixed case hour
+- `j` indexes the control hours
+- `N_ij = A_ij + B_ij + C_ij + D_ij`
+
+So the only difference is the summation index. Instead of summing across the whole case-hour / control-hour matrix, we now sum across the **control hours only** for one chosen case hour.
+
+This is useful because it shows whether the overall pooled-hours result is being driven mainly by one specific transition hour, especially the morning `06:00` period.
+
+### Results by Case Hour
+
+Mode | Case hour | MHw_OR | 95% CI
+Pedestrians | 05:00 | 2.207 | 2.200 to 2.214
+Pedestrians | 06:00 | 2.847 | 2.840 to 2.855
+Pedestrians | 17:00 | 1.194 | 1.191 to 1.196
+Pedestrians | 18:00 | 1.168 | 1.166 to 1.170
+Pedestrians | 19:00 | 1.218 | 1.216 to 1.220
+Pedestrians | 20:00 | 1.288 | 1.285 to 1.290
+Cars | 05:00 | 1.522 | 1.520 to 1.525
+Cars | 06:00 | 1.725 | 1.723 to 1.728
+Cars | 17:00 | 0.989 | 0.988 to 0.991
+Cars | 18:00 | 0.923 | 0.922 to 0.924
+Cars | 19:00 | 0.860 | 0.859 to 0.861
+Cars | 20:00 | 0.931 | 0.930 to 0.932
+Cyclists | 05:00 | 1.239 | 1.233 to 1.246
+Cyclists | 06:00 | 1.963 | 1.954 to 1.971
+Cyclists | 17:00 | 1.091 | 1.086 to 1.096
+Cyclists | 18:00 | 0.969 | 0.965 to 0.973
+Cyclists | 19:00 | 0.990 | 0.986 to 0.994
+Cyclists | 20:00 | 1.010 | 1.006 to 1.014
+
+### Plain-English Reading
+
+- **Pedestrians:** every case hour remains above 1, which means the darkness effect is not limited to one narrow comparison. The strongest signal is clearly at `06:00`, but the evening mixed hours still point in the same direction.
+- **Cars:** the story changes by case hour. The morning case hours (`05:00` and `06:00`) are above 1, but the evening case hours are around or below 1. That means the car result is not a single stable darkness effect across the day.
+- **Cyclists:** `06:00` stands out as the main source of the cyclist pooled-hours result. Outside that morning transition, the cyclist case-hour summaries are much closer to 1, so the overall cyclist effect is less uniform than the pedestrian effect.
+
+### Why This Section Matters
+
+The full pooled-hours MH OR is still the best single headline measure if the goal is to mirror the paper. But this case-hour version is a useful diagnostic because it shows **where the pooled effect is coming from**.
+
+For these data:
+
+- the pedestrian result is broad and consistent, but strongest at `06:00`
+- the cyclist result is driven mainly by `06:00`
+- the car result changes sign between morning and evening
