@@ -47,11 +47,6 @@ quantification methods end-to-end.
 | `01_data_engineering.ipynb` | Cleans and assembles the 37-sensor hourly panel |
 | `02_light_classification.ipynb` | Attaches solar state and derives the `Dark` binary indicator |
 | `03_exploratory_analysis.ipynb` | Raw daylight/darkness comparisons |
-| `04_case_control_or.ipynb` | **Method 1** — matched case-control odds ratios |
-| `05_sensor_map_clustering.ipynb` | Assigns sensors to `Central` / `East` / `Outlier` clusters |
-| `06_glm_cyclists.ipynb` | **Method 2a** — NB GLM ladder, cyclist outcome |
-| `07_glm_pedestrians.ipynb` | **Method 2b** — NB GLM ladder, pedestrian outcome |
-| `08_glm_combined_interaction.ipynb` | Cluster / CCTV / safety / built-environment interactions |
 | `09_weather_processing.ipynb` | Hourly weather controls (`temp_c`, `wind_ms`) |
 | `10_rain_processing.ipynb` | Hourly rain control (`rain_mm`) |
 
