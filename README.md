@@ -28,6 +28,15 @@ new_branch/
 └── report/                    advisory report and methods write-ups
 ```
 
+### `models/` — GLM working notebooks
+
+Consolidated GLM work and comparisons against the case-control estimates:
+
+- `Darkness GLM Models Will.ipynb`
+- `Reprocess OR Confirmation.ipynb`
+- `darkness_glm_model_comparison.csv` — model ladder output table
+- `Draft_1_glm_(Pre_Easter)/` — earlier draft GLM notebooks kept for provenance
+
 ### `notebooks/` — ordered analysis pipeline
 
 The numbered notebooks build the 37-sensor hourly panel and run both
@@ -45,18 +54,6 @@ quantification methods end-to-end.
 | `08_glm_combined_interaction.ipynb` | Cluster / CCTV / safety / built-environment interactions |
 | `09_weather_processing.ipynb` | Hourly weather controls (`temp_c`, `wind_ms`) |
 | `10_rain_processing.ipynb` | Hourly rain control (`rain_mm`) |
-
-### `glm/` — GLM working notebooks
-
-Consolidated GLM work and comparisons against the case-control estimates:
-
-- `Darkness GLM Models Will.ipynb`
-- `Darkness GLM Models.ipynb`
-- `Darkness Final Synthesis.ipynb`
-- `Darkness OR And GLM Comparison.ipynb`
-- `Reprocess OR Confirmation.ipynb`
-- `darkness_glm_model_comparison.csv` — model ladder output table
-- `Draft_1_glm_(Pre_Easter)/` — earlier draft GLM notebooks kept for provenance
 
 ### `data/processed/` — inputs to the two methods
 
