@@ -4,6 +4,10 @@ ROI_Calculations.py
 Estimates the pedestrian-count return from increasing streetlight density
 per geographic cluster, using the darkness negative-binomial GLM framework.
 
+**NOTE** This is not my code - this is Claude feedback on my suggestion of an increase of 
+1SD of lighting as a result of the GLM model 5 output - GLM model is available in
+the GLM directory 'GLM Models'.
+
 Outputs
 -------
 1. Which cluster is most affected by darkness (pedestrians)
