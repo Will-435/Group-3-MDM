@@ -143,18 +143,18 @@ flowchart TD
     L -.-> H
     L -.-> J
 
-    style A fill:#e8f0e3,stroke:#274b22
-    style B fill:#dde9f0,stroke:#1f3a52
-    style C fill:#f0e6d6,stroke:#7a5b22
-    style D fill:#f0e6d6,stroke:#7a5b22
-    style E fill:#dde9f0,stroke:#1f3a52
-    style F fill:#f0d9d9,stroke:#7a2222
-    style G fill:#f0d9d9,stroke:#7a2222
-    style H fill:#e2dcef,stroke:#3e2a7a
-    style I fill:#e2dcef,stroke:#3e2a7a
-    style J fill:#e2dcef,stroke:#3e2a7a
-    style K fill:#e2dcef,stroke:#3e2a7a
-    style L fill:#fff7d6,stroke:#7a6a22
+    style A fill:#e8f0e3,stroke:#274b22,color:#000
+    style B fill:#dde9f0,stroke:#1f3a52,color:#000
+    style C fill:#f0e6d6,stroke:#7a5b22,color:#000
+    style D fill:#f0e6d6,stroke:#7a5b22,color:#000
+    style E fill:#dde9f0,stroke:#1f3a52,color:#000
+    style F fill:#f0d9d9,stroke:#7a2222,color:#000
+    style G fill:#f0d9d9,stroke:#7a2222,color:#000
+    style H fill:#e2dcef,stroke:#3e2a7a,color:#000
+    style I fill:#e2dcef,stroke:#3e2a7a,color:#000
+    style J fill:#e2dcef,stroke:#3e2a7a,color:#000
+    style K fill:#e2dcef,stroke:#3e2a7a,color:#000
+    style L fill:#fff7d6,stroke:#7a6a22,color:#000
 ```
 
 The dashed arrows off the supervisor scrutiny node mark the spots where we loop back for a methodological or policy check, rather than treating the input as one discrete step.
