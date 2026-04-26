@@ -42,30 +42,33 @@ A short evidence base on darkness, lighting, and active travel, plus one feature
 
 ### Step 2, data engineering and cleaning
 
-This is the bit everything later sits on. Build an hourly panel of pedestrian, cyclist and car counts per sensor, slap a binary `Dark` flag on top from solar altitude, then merge in hourly weather (temp, wind, rain), CCTV count per sensor, business density, streetlight density, and ward-level safety. Drop any sensor with seven or more days of consecutive missing data, which leaves 37 sensors. Build the lags before any hour filtering so they do not lose their meaning. We did sweep alternative removal thresholds against a loss function internally but kept that off the report so the choice does not look forced.
+This is the bit everything later sits on. Build an hourly panel of pedestrian, cyclist and car counts per sensor, slap a binary `Dark` flag on top from solar altitude, then merge in hourly weather (temp, wind, rain), CCTV count per sensor, business density, streetlight density, and ward-level safety. Drop any sensor with seven or more days of consecutive missing data, which leaves 37 sensors.
 
 - Note 24 March : agreed on the 7-day missing data threshhold after testing alternatives internally. Need a small bar chart on the cleaning slide showing what removing the outlier sensors actually does.
-- Note 26 Apr : pipeline lives in `new_branch/notebooks/` as `01` to `10`. Aim is to freeze it by **30 April** so the modelling does not move underneath the slides.
+- Note 18 Apr : pipeline lives in `new_branch/notebooks/` as `01` to `10`. Aim is to freeze it today so the modelling does not move underneath the slides.
 
 ### Step 3, baseline odds ratio replication
 
 A straight replication of the reference paper's case-control matched odds ratio, restricted to the mixed clock hours (`05, 06, 17, 18, 19, 20`), pooled with Mantel-Haenszel. Three pooled summaries fall out: overall by mode, by cluster and mode, and by case-hour and mode.
 
-- Note 30 March : cross-checking against the Oscar reference paper, pending Oscar confirming this is academiclly fine.
+- Note 30 March : cross-checking against the Nikolai reference paper, pending Nikolai confirming this is academiclly fine.
+- Note 12 Apr: Add in Mantel-Haenszel to make results mroe interpreatable and ocmparable to OR os its clear and were doing liek for like!
 
-### Step 4, Negative Binomial GLM ladder
+### Step 4, Negative Binomial GLM 
 
-This is where the GLM has to actually earn its place, doing analytical work the case control cannot. Model 1 is a Negative Binomial GLM with log link covering `Dark`, lags, hour, day-of-week, month, weather, and sensor fixed effects, with standard errors clustered by sensor. Models 2 to 5 layer in interactions of `Dark` with `Cluster`, `cctv_z`, `safety_z`, `businesses_z`, and `streetlights_z`. Sample stays restricted to the same mixed hours as the case control so the two methods stay directly comparable. Coefficients reported as per cent changes via $100(e^\beta - 1)$. Evaluation pass covers Pearson dispersion at each rung, AIC across the ladder, and a Poisson vs Negative Binomial likelihood-ratio check on Model 1.
+This is where the GLM has to actually earn its place, doing analytical work the case control cannot. Create a Negative Binomial GLM with log link covering `Dark`, lags, hour, day-of-week, month, weather, and sensor fixed effects, with standard errors clustered by sensor. Include interactions of `Dark` with `Cluster`, `cctv_z`, `safety_z`, `businesses_z`, and `streetlights_z`, using model ladder 1-5. **Later decided: Sample stays restricted to the same mixed hours as the case control so the two methods stay directly comparable.** Coefficients reported as per cent changes via $100(e^\beta - 1)$. Evaluation pass covers Pearson dispersion at each rung, AIC across the ladder, and a Poisson vs Negative Binomial likelihood-ratio check on Model 1.
 
-- Note 3 Apr : GLM correctly restricted to the case-control hours. Excluding control-only hours like 03:00 stops them skewing the darkness coefficient and keeps things lined up with the OR method.
+- Note 20 Mar: The model doesnt seem right Odds Ratios are WAY too high - Need to re-evaluate the whole process at some point.
+- Note 26 Mar :  Use Model Ladder: Model 1 is a Negative Binomial GLM with log link covering `Dark`, lags, hour, day-of-week, month, weather, and sensor fixed effects, with standard errors clustered by sensor. Models 2 to 5 layer in interactions of `Dark` with `Cluster`, `cctv_z`, `safety_z`, `businesses_z`, and `streetlights_z`.
+- Note 3 Apr : GLM restricted to the case-control hours, to make more comparable with the OR Method
 - Note 3 Apr : pedestrian drop is around 33 per cent, cyclist drop only 4 to 5 per cent overall. Massive contrast. The cyclist story has to be split by cluster, otherwise the average just buries it.
-- Note 26 Apr : model evaluation paragraph done. AIC favours Model 4 for both outcomes, dispersion sits in the right place, Poisson rejected by orders of magnitude.
+- Note 22 Apr : Ensure we evaluate model in techn note: model evaluation paragraph done. AIC favours Model 4 for both outcomes, dispersion sits in the right place, Poisson rejected by orders of magnitude.
 
 ### Step 5, clustering decision
 
 Activity-level clustering dropped because it uses the outcome variable. Settled on location-only: `Central`, `East`, `Outlier`. North and South dropped because the sample sizes are too small, with a justification slide in the deck.
 
-- Note 24 March : going location-only. The Y-variable approach was circular so it had to go.
+- Note 12 March : going location-only. The Y-variable approach was circular so it had to go.
 
 ### Step 6, interpreting the results
 
@@ -76,10 +79,9 @@ Pedestrians and cyclists need separate framings. Pedestrians: minus 33 per cent 
 
 ### Step 7, supervisor scrutiny
 
-A recurring quality gate at every methodological or framing step, not a one-off review. Sanity checks the binary light or dark definition, validates the OR replication, presses on whether the GLM is doing distinctive work, stress-tests clustering and the exclusion threshold, and keeps the linear assumptions of the GLM honestly disclosed.
+Sanity checks the binary light or dark definition, presses on whether the GLM is doing distinctive work, References need to be included everywhere, and more focus on the limtaitons of VivaCity Sensors - feels like were overselling the idea of our project a bit. Focus on The coherence in the project.
 
-- Note Week 1 : AI is fine for research, ideas, and code skeletoning. Implementation and figures are us. Verify references.
-
+- Note 15 Apr: We need to include more about the limitations ie the Vivacity sensor's/camera limitations at the start.
 ### Step 8, policy case
 
 Brief is consultancy-style, so the recommendations have to land as defensible options, not a single take it or leave it ask. Drafted policy first, then framed the GLM results around it, to avoid restating numbers in two places. Anchored to named Bristol and West of England policies (Bristol Transport Strategy, Safe Systems road safety plan, the West of England LCWIP, the East Bristol Liveable Neighbourhood, Victoria Street improvements, King Street pedestrianisation, the LED street-lighting upgrade programme).
@@ -91,30 +93,29 @@ Brief is consultancy-style, so the recommendations have to land as defensible op
 
 The 10-minute recorded presentation is the main deliverable. Structure is policy-led, with data and methods supporting the policy. Opens with motivation and the question, introduces the data and the sensors briefly with reproducibility deferred to the technical note, covers cleaning quickly with the bar chart of the outlier impact, defines an odds ratio in plain English, shows one comparison slide against the reference paper, transitions to the GLM as an extension that fixes the case control's weaknesses, splits pedestrians and cyclists, gives the council two policy options, and closes on limitations split into statistical and physical. Minimum text per slide, charts and maps doing the work, dynamic morph transitions where they help.
 
-- Note 30 March : pitching as consultants, not students. Self-inspired investigation driven by the data. Slides stay light on text and lean on visuals.
-- Note 26 Apr : aim for full slide draft on Git by **4 May**, full team walkthrough by **8 May**.
+- Note 25 March : pitching as consultants, not students. Self-inspired investigation driven by the data.
+- Note 1 Apr : aim for full slide draft on Git by **6 Apr**, full team walkthrough by **8 Apr**.
 
 ### Step 10, presentation redraft
 
 After the first walkthrough, the redraft is about flow and signposting, not new analysis. Trim the opening slides, re-record the third spoken slide, merge limitations and results into one narrative, push implementation content to the back, tighten the data science section, add citation footers per slide, smooth presenter hand-offs, label every figure properly, and bin repeated results across slides.
 
-- Note 16 Apr : first two slides cut, third re-recorded. References go on as small footers per slide rather than one list at the end. Implications section too long, needs trimming. Some slides have on-screen content nobody talks to, that goes.
-- Note 26 Apr : aim to have the redraft locked by **12 May**.
+- Note 6 Apr : first two slides cut, third re-recorded. References go on as small footers per slide rather than one list at the end. Implications section too long, needs trimming. Some slides have on-screen content nobody talks to, that goes.
+- Note 12 Apr : aim to have the redraft locked by **15 Apr**
+- Note 15 Apr: Still Over time, lots of redrafting to do for time, aswell as this Nikolai mentioned the cohesion wasnt great ie it was hard to follow slides weren't used well, from now on focus on this
 
 ### Step 11, technical note build
 
 Up to five pages of LaTeX in self-contained sections, where the reproducibility detail lives. Sections: data engineering and the clean 37-sensor sample with the seven-day rule; the case-control method with the Mantel-Haenszel pooling formula and the validation against the reference paper; the Negative Binomial GLM with the full mean equation, the moderator z-scoring and the clustered standard errors; a short model-evaluation paragraph (AIC across the five rungs, dispersion at each rung, Poisson vs Negative Binomial likelihood ratio on Model 1); results mirroring the presentation but with full coefficient tables; limitations split into statistical and physical; a link to the public branch in `new_branch` of the Git repo with a short description of each subdirectory.
 
-- Note 26 Apr : filename has to be `Group3-DarknessDeterrence-TechNote.pdf`. Anything we link from the report needs to be well commented, and the repo needs a clear README at the entry point.
-- Note 26 Apr : aim for tech note v1 on Overleaf by **8 May**, final compiled PDF by **15 May**.
+- Note 20 Apr : filename has to be `Group3-DarknessDeterrence-TechNote.pdf`. Anything we link from the report needs to be well commented, and the repo needs a clear README at the entry point.
+- Note 20 Apr : aim for tech note v1 on Overleaf today!
 
 ### Step 12, final redraft and submission
 
-A final pass once the technical note is done, since writing the note tends to flush out small inconsistencies in slide claims. Walk every slide and check each number is backed by the technical note, re-record any slide where the script has drifted, tidy any cluttered slides flagged in the second review, render the final video with the right filename and resolution, compile the technical note PDF, bundle the lot into `Group3-DarknessDeterrence-All.zip`, and upload via Browse Cloud Storage on Blackboard with plenty of lead time.
+A final pass once the technical note is done, since writing the note tends to flush out small inconsistencies in slide claims. Walk every slide and check each number is backed by the technical note, re-record any slide where the script has drifted, tidy any cluttered slides flagged in the second review, render the final video with the right filename, compile the technical note PDF, bundle the lot into `Group3-DarknessDeterrence-All.zip`.
 
-- Note 26 Apr : Blackboard uploads are slow without Cloud Storage and can take ~20 mins for a 10-min video on a normal connection. Use the Browse Cloud Storage option.
-- Note 26 Apr : aim to have the full submission package uploaded by **18 May**, management report emailed to the unit director and the supervisor by **25 May**.
-
+- Note 20 Apr : Spend last day rigorously going through EVERYTHING before submission including full technical note walkthrough readthrough and editing for final coherence and time savings/
 ---
 
 ## Project flow chart
