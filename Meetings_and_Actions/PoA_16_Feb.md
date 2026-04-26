@@ -10,7 +10,7 @@
 * **Output:** 3 defined sections split up on a map.
 
 ## Tom
-* **Task:** Work with Tom to split up the sensors into clusters
+* **Task:** Work with Karan to split up the sensors into clusters
 * **Output:** 3 defined sections split up on a map.
 
 ## Jayden
